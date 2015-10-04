@@ -34,11 +34,11 @@ func (b *BinaryTree) insert(n *node, data int) *node {
     return n
 }
 
-func (b *BinaryTree) Lookup(data int) bool {
-    return b.lookup(b.root, data)
+func (b *BinaryTree) Get(data int) bool {
+    return b.get(b.root, data)
 }
 
-func (b *BinaryTree) lookup(n *node, data int) bool {
+func (b *BinaryTree) get(n *node, data int) bool {
     if n == nil {
         return false
     }
@@ -46,8 +46,8 @@ func (b *BinaryTree) lookup(n *node, data int) bool {
     if data == n.data {
         return true
     } else if data < n.data {
-        return b.lookup(n.left, data)
+        return b.get(n.left, data)
     } else {
-        return b.lookup(n.right, data)
+        return b.get(n.right, data)
     }
 }
